@@ -1,0 +1,17 @@
+.nameImage{
+    margin-top:  20px;
+    margin-bottom: 15px;
+}
+.form-group{
+    margin-top: 20px;
+}
+.container{
+    background-color: rgb(161, 161, 161);
+}
+#submit{
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+#submit:hover{
+    background-color: rgb(52, 52, 179)
+}
