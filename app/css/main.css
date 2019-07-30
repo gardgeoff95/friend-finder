@@ -6,7 +6,8 @@
     margin-top: 20px;
 }
 .container{
-    background-color: rgb(161, 161, 161);
+    background-image: url("../images/fishnets-and-hearts.png");
+    
 }
 #submit{
     margin-bottom: 10px;
@@ -14,4 +15,7 @@
 }
 #submit:hover{
     background-color: rgb(52, 52, 179)
+}
+.w-75{
+    border-radius: 5px;
 }
