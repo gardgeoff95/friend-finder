@@ -8,15 +8,18 @@
     <title>Survey</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
 
 
 </head>
 
 <body>
-  
+
     <div class="container">
-       
-        
+
+
         <h1>
             Survey Questions
         </h1>
@@ -32,7 +35,8 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Your mind is always buzzing with unexplored ideas and plans.</label>
+                    <label for="exampleFormControlSelect1">Your mind is always buzzing with unexplored ideas and
+                        plans.</label>
                     <select class="questions form-control" id="question1">
                         <option disabled selected>Select an Option</option>
                         <option>1 (strongly disagree)</option>
@@ -43,7 +47,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Generaly Speaking, you rely more on your experience than your imagination.</label>
+                    <label for="exampleFormControlSelect1">Generaly Speaking, you rely more on your experience than your
+                        imagination.</label>
                     <select class="questions form-control" id="question2">
                         <option disabled selected>Select an Option</option>
                         <option>1 (strongly disagree)</option>
@@ -54,7 +59,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">You find it easy to stay relaxed and focused even when there is some pressure.</label>
+                    <label for="exampleFormControlSelect1">You find it easy to stay relaxed and focused even when there
+                        is some pressure.</label>
                     <select class="questions form-control" id="question3">
                         <option disabled selected>Select an Option</option>
                         <option>1 (strongly disagree)</option>
@@ -87,7 +93,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">It is often difficult for you to relate to other people's feelings.</label>
+                    <label for="exampleFormControlSelect1">It is often difficult for you to relate to other people's
+                        feelings.</label>
                     <select class="questions form-control" id="question6">
                         <option disabled selected>Select an Option</option>
                         <option>1 (strongly disagree)</option>
@@ -98,7 +105,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">In a discussion, truth should be more important than people's sensitivities.</label>
+                    <label for="exampleFormControlSelect1">In a discussion, truth should be more important than people's
+                        sensitivities.</label>
                     <select class="questions form-control" id="question7">
                         <option disabled selected>Select an Option</option>
                         <option>1 (strongly disagree)</option>
@@ -120,7 +128,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">You feel more energetic after spending time with a group of people.</label>
+                    <label for="exampleFormControlSelect1">You feel more energetic after spending time with a group of
+                        people.</label>
                     <select class="questions form-control" id="question9">
                         <option disabled selected>Select an Option</option>
                         <option>1 (strongly disagree)</option>
@@ -131,7 +140,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">You think that everyone's views should be respected regardless of whether they are supported by facts or not.</label>
+                    <label for="exampleFormControlSelect1">You think that everyone's views should be respected
+                        regardless of whether they are supported by facts or not.</label>
                     <select class="questions form-control" id="question10">
                         <option disabled selected>Select an Option</option>
                         <option>1 (strongly disagree)</option>
@@ -150,6 +160,42 @@
 
         </div>
     </div>
+    <script>
+        $("document").ready(function () {
+
+            $("#submit").on("click", function () {
+                let question1 = parseInt($("#question1").val());
+                let question2 = parseInt($("#question2").val());
+                let question3 = parseInt($("#question3").val());
+                let question4 = parseInt($("#question4").val());
+                let question5 = parseInt($("#question5").val());
+                let question6 = parseInt($("#question6").val());
+                let question7 = parseInt($("#question7").val());
+                let question8 = parseInt($("#question8").val());
+                let question9 = parseInt($("#question9").val());
+                let question10 = parseInt($("#question10").val());
+
+                let questionsArray = [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10];
+
+
+
+                let survey = {
+
+                    questions: questionsArray
+
+                }
+
+                console.log(questionsArray);
+
+                $.post("/api/friends", survey)
+                    .then(function (data) {
+                        console.log("add.html", data);
+                        alert("Adding Table!");
+                    })
+
+            });
+        });
+    </script>
 
 
 </body>

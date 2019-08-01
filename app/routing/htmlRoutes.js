@@ -19,4 +19,6 @@ module.exports = function(app) {
     app.get("/css/bootstrap.css", function(req, res){
         res.sendFile(path.join(__dirname, "/../css/bootstrap.css"));
     });
+
+  
 }
